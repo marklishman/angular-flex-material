@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MediaChange, ObservableMedia } from '@angular/flex-layout';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-basic',
   template: `
     <mat-toolbar color="primary">
-      Basic
+      Basic ({{activeMediaQuery}})
     </mat-toolbar>
     <main fxLayout="row wrap"
-          fxLayoutAlign="space-around start"
-          fxLayoutGap="10px">
-      <section fxFlex="10">1</section>
-      <section fxFlex="50">2</section>
-      <section fxFlex="10">3</section>
-      <section fxFlex="20">4</section>
-      <section fxFlex="10">5</section>
-      <section fxFlex="30">6</section>
-      <section fxFlex="40">7</section>
+          fxLayoutAlign="space-evenly start"
+          fxLayoutGap="10px"
+          fxLayout.lt-md="column"
+          fxLayoutAlign.lt-md="start none">
+      <section *ngFor="let width of flexWidths; let i=index"
+               fxFlex="{{width}}">
+        {{i}}
+      </section>
     </main>
   `,
   styles: [`
@@ -23,6 +24,7 @@ import { Component, OnInit } from '@angular/core';
       border: 1px solid dimgray;
       height: 1000px;
     }
+
     section {
       background: darkseagreen;
       color: white;
@@ -30,16 +32,28 @@ import { Component, OnInit } from '@angular/core';
       height: 200px;
       justify-content: center;
       margin-top: 10px;
+      padding-top:20px;
       text-align: center;
-      width: 200px;
     }
   `]
 })
-export class BasicComponent implements OnInit {
+export class BasicComponent implements OnDestroy {
 
-  constructor() { }
+  flexWidths = [10, 50, 10, 20, 10, 30, 40];
+  watcher: Subscription;
+  activeMediaQuery = '';
 
-  ngOnInit() {
+  constructor(private media: ObservableMedia) {
+
+    this.watcher = media.subscribe((change: MediaChange) => {
+      this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
+      console.log(this.activeMediaQuery);
+    });
+
+  }
+
+  ngOnDestroy() {
+    this.watcher.unsubscribe();
   }
 
 }
