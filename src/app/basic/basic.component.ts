@@ -14,8 +14,9 @@ import { Subscription } from 'rxjs/Subscription';
           fxLayout.lt-md="column"
           fxLayoutAlign.lt-md="start none">
       <section *ngFor="let width of flexWidths; let i=index"
-               fxFlex="{{width}}">
-        {{i}}
+               fxFlex="{{width}}"
+               fxFlexOrder.lt-md="{{width}}">
+        <span>{{i+1}}</span>
       </section>
     </main>
   `,
@@ -24,15 +25,14 @@ import { Subscription } from 'rxjs/Subscription';
       border: 1px solid dimgray;
       height: 1000px;
     }
-
     section {
       background: darkseagreen;
       color: white;
-      font-size: 40px;
+      font-size: 50px;
       height: 200px;
       justify-content: center;
-      margin-top: 10px;
-      padding-top:20px;
+      margin-top: 30px;
+      padding-top: 20px;
       text-align: center;
     }
   `]
