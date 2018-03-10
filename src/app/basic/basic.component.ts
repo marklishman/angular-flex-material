@@ -1,6 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MediaChange, ObservableMedia } from '@angular/flex-layout';
-import { Subscription } from 'rxjs/Subscription';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-basic',
@@ -8,9 +6,9 @@ import { Subscription } from 'rxjs/Subscription';
     <main fxLayout="row wrap"
           fxLayoutAlign="space-evenly start"
           fxLayoutGap="10px">
-      <section *ngFor="let width of flexWidths; let i=index"
-               fxFlex="{{width}}">
-        <span>{{i+1}}</span>
+      <section *ngFor="let f of flexValues"
+               fxFlex="{{f}}">
+        <span>{{f}}</span>
       </section>
     </main>
   `,
@@ -23,7 +21,7 @@ import { Subscription } from 'rxjs/Subscription';
       background: darkseagreen;
       color: white;
       font-size: 40px;
-      height: 200px;
+      height: 150px;
       justify-content: center;
       margin-top: 10px;
       padding-top: 10px;
@@ -33,6 +31,6 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class BasicComponent {
 
-  flexWidths = [10, 50, 10, 20, 10, 30, 40];
+  flexValues = [50, 10, 20, 30, 40];
 
 }

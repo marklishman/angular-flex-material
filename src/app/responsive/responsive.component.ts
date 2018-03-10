@@ -6,46 +6,48 @@ import { Subscription } from 'rxjs/Subscription';
   selector: 'app-responsive',
   template: `
     <mat-toolbar>
-      ({{activeMediaQuery}})
+      {{activeMediaQuery}}
     </mat-toolbar>
     <main fxLayout="row wrap"
-          fxLayoutAlign="space-evenly start"
+          fxLayoutAlign="space-evenly center"
           fxLayoutGap="10px"
           fxLayout.lt-md="column"
-          fxLayoutAlign.lt-md="start none">
-      <section *ngFor="let width of flexWidths; let i=index"
-               fxFlex="{{width}}">
-        <span>{{i+1}}</span>
-      </section>
+          fxLayoutAlign.sm="space-around none"
+          fxLayoutAlign.lt-md="start stretch"
+          fxLayoutGap.lt-md="">
+      <section fxFlex="20" fxFlexOrder.lt-md="2"></section>
+      <section fxFlex="30" fxFlexOrder.lt-md="3"></section>
+      <section fxFlex="10" fxFlexOrder.lt-md="1"></section>
     </main>
   `,
   styles: [`
     main {
       border: 1px solid dimgray;
-      height: 500px;
+      height: 400px;
     }
     section {
-      background: darkseagreen;
-      color: white;
-      font-size: 40px;
       height: 200px;
-      justify-content: center;
-      margin-top: 10px;
-      padding-top: 10px;
-      text-align: center;
+    }
+    section:nth-of-type(1) {
+      background: pink;
+    }
+    section:nth-of-type(2) {
+      background: lightgreen;
+    }
+    section:nth-of-type(3) {
+      background: lightblue;
     }
   `]
 })
 export class ResponsiveComponent implements OnDestroy {
 
-  flexWidths = [10, 50, 10, 20, 10, 30, 40];
   watcher: Subscription;
   activeMediaQuery = '';
 
   constructor(private media: ObservableMedia) {
 
     this.watcher = media.subscribe((change: MediaChange) => {
-      this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
+      this.activeMediaQuery = change ? `'${change.mqAlias}' = ${change.mediaQuery}` : '';
     });
 
   }
