@@ -13,9 +13,9 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="content">
     <button mat-button (click)="sideNav.toggle()">
-      <mat-icon [fxHide.gt-sm]="true">menu</mat-icon>
+      <mat-icon [fxHide.gt-sm]="true" class="menu">menu</mat-icon>
     </button>
     </mat-toolbar>
     <router-outlet></router-outlet>
