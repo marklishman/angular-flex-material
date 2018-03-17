@@ -9,12 +9,14 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ResponsiveComponent } from './responsive/responsive.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicComponent,
-    ResponsiveComponent
+    ResponsiveComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

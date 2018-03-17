@@ -1,25 +1,15 @@
 
-$iconSize: 56px;
-
 mat-sidenav {
   width: 250px;
+
+  mat-icon[mat-list-icon] {
+    color: #737373;
+  }
 }
 
 mat-sidenav-container {
   position: fixed;
   height: 100%;
-  min-height: 100%;
   width: 100%;
 }
 
-mat-toolbar.content {
-  padding-left: 0;
-}
-
-mat-icon.menu {
-  font-size: 50px;
-  height: $iconSize;
-  width: $iconSize;
-  line-height: $iconSize;
-  color: white;
-}
