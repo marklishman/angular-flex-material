@@ -8,10 +8,17 @@
       Menu
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/basic">Basic</a>
-      <a mat-list-item routerLink="/responsive">Responsive</a>
+      <a mat-list-item routerLink="/basic">
+        <mat-icon mat-list-icon>view_agenda</mat-icon>
+        <p>Basic</p>
+      </a>
+      <a mat-list-item routerLink="/responsive">
+        <mat-icon mat-list-icon="">tablet_android</mat-icon>
+        <p>Responsive</p>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="content">
     <button mat-button (click)="sideNav.toggle()">

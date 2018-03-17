@@ -12,8 +12,8 @@ import { Subscription } from 'rxjs/Subscription';
           fxLayoutAlign="space-evenly center"
           fxLayoutGap="10px"
           fxLayout.lt-md="column"
-          fxLayoutAlign.sm="space-around none"
           fxLayoutAlign.lt-md="start stretch"
+          fxLayoutAlign.sm="space-around none"
           fxLayoutGap.lt-md="">
       <section fxFlex="20" fxFlexOrder.lt-md="2"></section>
       <section fxFlex="30" fxFlexOrder.lt-md="3"></section>
