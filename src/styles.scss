@@ -3,3 +3,9 @@
 body {
   margin: 0;
 }
+
+button.floating-action {
+  position: fixed!important;
+  bottom: 40px;
+  right: 40px;
+}

@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
   selector: 'app-responsive',
   template: `
     <mat-toolbar>
-      {{activeMediaQuery}}
+      Responsive layout. Active media query: {{activeMediaQuery}}
     </mat-toolbar>
     <main fxLayout="row wrap"
           fxLayoutAlign="space-evenly center"

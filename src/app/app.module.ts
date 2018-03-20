@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ResponsiveComponent } from './responsive/responsive.component';
 import { CardComponent } from './card/card.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicComponent,
     ResponsiveComponent,
-    CardComponent
+    CardComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

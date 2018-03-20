@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-card',
   template: `
+    <mat-toolbar>
+      Cards with action links anchored to base
+    </mat-toolbar>
     <div fxLayout="row wrap"
          fxLayoutGap="10px"
          class="card-list">

@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-basic',
   template: `
+    <mat-toolbar>
+      Basic layout using fxLayout and fxFlex
+    </mat-toolbar>
     <main fxLayout="row wrap"
           fxLayoutAlign="space-evenly start"
           fxLayoutGap="10px">
