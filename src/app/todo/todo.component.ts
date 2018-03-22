@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Todo } from './todo';
-import { MatSelectionListChange } from '@angular/material';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
 })
-export class TodoComponent implements OnInit{
+export class TodoComponent {
   todos: Todo[] = [
     {
       id: 100,
@@ -25,20 +24,5 @@ export class TodoComponent implements OnInit{
       notes: 'Samsung or Panasonic'
     },
   ];
-  selectedOptions: number[] = [];
-
-  ngOnInit(): void {
-    this.selectedOptions = this.todos
-      .filter( todo => todo.done )
-      .map( todo => todo.id );
-  }
-
-  public onModelChange(change: MatSelectionListChange): void {
-    this.todos = this.todos.map(
-      todo => {
-        todo.done = this.selectedOptions.indexOf(todo.id) > -1;
-        return todo;
-      });
-  }
 
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import {
-  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatListModule, MatSidenavModule,
+  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatListModule, MatSidenavModule, MatSliderModule, MatSlideToggleBase,
+  MatSlideToggleModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -13,6 +14,8 @@ import {
     MatIconModule,
     MatListModule,
     MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
     MatToolbarModule
   ],
   declarations: []

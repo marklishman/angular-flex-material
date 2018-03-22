@@ -12,13 +12,15 @@ import { ResponsiveComponent } from './responsive/responsive.component';
 import { CardComponent } from './card/card.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicComponent,
-    ResponsiveComponent,
     CardComponent,
+    ListComponent,
+    ResponsiveComponent,
     TodoComponent
   ],
   imports: [

@@ -1,17 +1,13 @@
 
 <mat-card class="content-panel">
-  <mat-selection-list [(ngModel)]="selectedOptions"
-                      (selectionChange)="onModelChange($event)">
-    <mat-list-option *ngFor="let todo of todos"
-                     checkboxPosition="before"
-                     [value]="todo.id">
-        <p [class.complete]="todo.done">{{todo.description}}</p>
+  <mat-list>
+    <mat-list-item *ngFor="let todo of todos">
+      <mat-slide-toggle [(ngModel)]="todo.done"></mat-slide-toggle>
+      <p [class.complete]="todo.done">{{todo.description}}</p>
       <mat-divider></mat-divider>
-    </mat-list-option>
-  </mat-selection-list>
+    </mat-list-item>
+  </mat-list>
 </mat-card>
-
-<p>{{selectedOptions | json}}</p>
 
 <button mat-fab color="primary" routerLink="/todo" class="floating-action">
   <mat-icon>add</mat-icon>
