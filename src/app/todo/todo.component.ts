@@ -10,19 +10,38 @@ export class TodoComponent {
   todos: Todo[] = [
     {
       id: 100,
-      description: 'Wash my car',
+      description: 'Wash car',
       done: true
     },
     {
       id: 200,
-      description: 'Submit invoice for March',
-      notes: 'Don\'t forget to add VAT and check the totals.\nSubmit by 10th April.'
+      description: 'Visit the gym',
     },
     {
       id: 300,
-      description: 'Research TVs',
-      notes: 'Samsung or Panasonic'
+      description: 'Cut the grass',
+    },
+    {
+      id: 400,
+      description: 'Order new phone',
     },
   ];
+
+  newTodo: string;
+
+  get selectedPercentage() {
+    const selected = this.todos.filter( todo => todo.done).length;
+    return Math.ceil(selected / this.todos.length * 100);
+  }
+
+  onChange() {
+    const maxId = this.todos
+      .map( todo => todo.id)
+      .reduce(function(a, b) {
+      return Math.max(a, b);
+    });
+    this.todos = [...this.todos, {id: maxId + 1, description: this.newTodo}];
+    this.newTodo = '';
+  }
 
 }

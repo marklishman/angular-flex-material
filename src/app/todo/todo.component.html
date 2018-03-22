@@ -1,5 +1,9 @@
 
 <mat-card class="content-panel">
+  <mat-progress-bar color="primary"
+                    mode="determinate"
+                    [value]="selectedPercentage">
+  </mat-progress-bar>
   <mat-list>
     <mat-list-item *ngFor="let todo of todos">
       <mat-slide-toggle [(ngModel)]="todo.done"></mat-slide-toggle>
@@ -7,6 +11,12 @@
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
+  <mat-form-field>
+    <input matInput
+           placeholder="Quick Add"
+           [(ngModel)]="newTodo"
+           (change)="onChange()">
+  </mat-form-field>
 </mat-card>
 
 <button mat-fab color="primary" routerLink="/todo" class="floating-action">
