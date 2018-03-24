@@ -16,17 +16,18 @@ import { ListComponent } from './list/list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicComponent,
     CardComponent,
+    DashboardComponent,
     ListComponent,
+    MapComponent,
     ResponsiveComponent,
     TodoComponent,
-    DashboardComponent,
-    MapComponent
   ],
   imports: [
     AppRoutingModule,
@@ -37,7 +38,8 @@ import { MapComponent } from './map/map.component';
     MaterialModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCs7eABBxK3W5COCKsyobl0wFyG_4w3wd0'
-    })
+    }),
+    AgmSnazzyInfoWindowModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
