@@ -1,5 +1,6 @@
 
 <mat-card class="content-panel">
+  <mat-toolbar>{{selected}} of {{todos.length}} completed</mat-toolbar>
   <mat-progress-bar color="primary"
                     mode="determinate"
                     [value]="selectedPercentage">
@@ -13,7 +14,7 @@
   </mat-list>
   <mat-form-field>
     <input matInput
-           placeholder="Quick Add"
+           placeholder="Add Todo"
            [(ngModel)]="newTodo"
            (change)="onChange()">
   </mat-form-field>

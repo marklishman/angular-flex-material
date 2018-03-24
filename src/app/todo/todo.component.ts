@@ -29,9 +29,12 @@ export class TodoComponent {
 
   newTodo: string;
 
+  get selected() {
+    return this.todos.filter( todo => todo.done).length;
+  }
+
   get selectedPercentage() {
-    const selected = this.todos.filter( todo => todo.done).length;
-    return Math.ceil(selected / this.todos.length * 100);
+    return Math.ceil(this.selected / this.todos.length * 100);
   }
 
   onChange() {
