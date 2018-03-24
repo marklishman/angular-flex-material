@@ -13,6 +13,9 @@ import { CardComponent } from './card/card.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { ListComponent } from './list/list.component';
     CardComponent,
     ListComponent,
     ResponsiveComponent,
-    TodoComponent
+    TodoComponent,
+    DashboardComponent,
+    MapComponent
   ],
   imports: [
     AppRoutingModule,
@@ -29,7 +34,10 @@ import { ListComponent } from './list/list.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCs7eABBxK3W5COCKsyobl0wFyG_4w3wd0'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

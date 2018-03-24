@@ -1,6 +1,6 @@
 
 <mat-toolbar><h1>Selected Elements: {{selectedOptions}}</h1></mat-toolbar>
-<mat-card class="content-panel">
+<mat-card class="spacer">
   <mat-selection-list [(ngModel)]="selectedOptions"
                       (selectionChange)="onModelChange($event)">
     <mat-list-option *ngFor="let todo of todos"

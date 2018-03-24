@@ -5,6 +5,8 @@ import { ResponsiveComponent } from './responsive/responsive.component';
 import { CardComponent } from './card/card.component';
 import { TodoComponent } from './todo/todo.component';
 import { ListComponent } from './list/list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   {path: 'basic', component: BasicComponent},
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: 'card', component: CardComponent},
   {path: 'list', component: ListComponent},
   {path: 'todo', component: TodoComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'map', component: MapComponent},
 ];
 
 @NgModule({
