@@ -7,8 +7,16 @@
   </mat-progress-bar>
   <mat-list>
     <mat-list-item *ngFor="let todo of todos">
-      <mat-slide-toggle [(ngModel)]="todo.done"></mat-slide-toggle>
-      <p [class.complete]="todo.done">{{todo.description}}</p>
+      <mat-slide-toggle [(ngModel)]="todo.done"
+                        fxFlex="10">
+      </mat-slide-toggle>
+      <p [class.complete]="todo.done"
+         fxFlex="50">
+        {{todo.description}}
+      </p>
+      <p fxFlex="20">
+        13-Apr-2018
+      </p>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
