@@ -12,7 +12,7 @@
                 [latitude]="marker.lat"
                 [longitude]="marker.lng"
                 [label]="marker.label"
-                [markerDraggable]="true"
+                [markerDraggable]="false"
                 (markerClick)="clickedMarker(marker.label)">
       <agm-snazzy-info-window [maxWidth]="200"
                               [closeWhenOthersOpen]="true"
@@ -22,13 +22,15 @@
         </ng-template>
       </agm-snazzy-info-window>
     </agm-marker>
-    <agm-circle [latitude]="markers[0].lat"
-                [longitude]="markers[0].lng"
+    <agm-circle #circle
+                [latitude]="lat"
+                [longitude]="lng"
                 [radius]="1000"
                 [fillColor]="'red'"
                 [circleDraggable]="true"
                 [editable]="true"
-                (radiusChange)="onCircleRadiusChange($event)">
+                (radiusChange)="onGeoFenceChange()"
+                (dragEnd)="onGeoFenceChange()">
     </agm-circle>
   </agm-map>
   <mat-divider></mat-divider>

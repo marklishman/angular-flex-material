@@ -3,7 +3,7 @@ import {
   MatButtonModule, MatCardModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
   MatProgressBarModule,
   MatSidenavModule, MatSliderModule,
-  MatSlideToggleModule,
+  MatSlideToggleModule, MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -21,6 +21,7 @@ import {
     MatSidenavModule,
     MatSliderModule,
     MatSlideToggleModule,
+    MatSnackBarModule,
     MatToolbarModule
   ],
   declarations: []

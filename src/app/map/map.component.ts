@@ -1,31 +1,40 @@
-import { Component } from '@angular/core';
-import { MouseEvent } from '@agm/core';
-import { google } from '@agm/core/services/google-maps-types';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AgmCircle, AgmMarker, MapsAPILoader, MouseEvent } from '@agm/core';
+import { MatSnackBar } from '@angular/material';
+
+declare var google: any;
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent {
+export class MapComponent implements AfterViewInit {
 
   lat = 53.744366;
   lng = -2.612968;
 
   markers: Marker[] = [
     {
-      lat: 53.744366,
-      lng: -2.712968,
-      label: 'A'
-    },
-    {
       lat: 53.731042,
       lng: -2.526273,
-      label: 'B'
+      label: 'A'
     }
   ];
 
   zoom = 12;
+
+  @ViewChild(AgmCircle) circle: AgmCircle;
+  @ViewChild(AgmCircle) marker: AgmMarker;
+
+  constructor(private mapsApiLoader: MapsAPILoader,
+              public snackBar: MatSnackBar) {}
+
+  ngAfterViewInit(): void {
+    this.mapsApiLoader.load().then(() => {
+      console.log('Loaded');
+    });
+  }
 
   mapClicked(event: MouseEvent) {
     console.log(`lat: ${event.coords.lat}, long: ${event.coords.lng}`);
@@ -35,12 +44,18 @@ export class MapComponent {
     console.log(`clicked the marker: ${label}`);
   }
 
-  onCircleRadiusChange(radius: number) {
-    console.log(radius);
+  onGeoFenceChange() {
+    const latLng = new google.maps.LatLng(
+      this.markers[0].lat,
+      this.markers[0].lng,
+    );
+    this.circle.getBounds().then(
+      (bounds) => {
+        const inCircle = bounds.contains(latLng);
+        this.snackBar.open(`Marker ${inCircle ? 'in' : 'out'}side geofence`, '', {
+          duration: 2000,
+        });
+      }
+    );
   }
-
-  pointInCircle(point, radius, center) {
-    return (google.maps.geometry.spherical.computeDistanceBetween(point, center) <= radius);
-  }
-
 }
