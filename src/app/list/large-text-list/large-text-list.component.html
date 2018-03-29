@@ -1,0 +1,22 @@
+
+<mat-toolbar><h1>Large text in list items (with height: initial)</h1>
+</mat-toolbar>
+<mat-card class="spacer">
+  <mat-list>
+    <mat-list-item *ngFor="let item of loremIpsum" style="height: initial;">
+      <p fxFlex="40">{{item}}</p>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+
+<mat-toolbar><h1>Large text in list items (default)</h1>
+</mat-toolbar>
+<mat-card class="spacer">
+  <mat-list>
+    <mat-list-item *ngFor="let item of loremIpsum">
+      <p fxFlex="40">{{item}}</p>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

@@ -4,9 +4,9 @@ import { BasicComponent } from './basic/basic.component';
 import { ResponsiveComponent } from './responsive/responsive.component';
 import { CardComponent } from './card/card.component';
 import { TodoComponent } from './todo/todo.component';
-import { ListComponent } from './list/list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MapComponent } from './map/map.component';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
   {path: 'basic', component: BasicComponent},

@@ -12,11 +12,13 @@ import { ResponsiveComponent } from './responsive/responsive.component';
 import { CardComponent } from './card/card.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
-import { ListComponent } from './list/list.component';
+import { SelectionListComponent } from './list/selection/selection-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { ListComponent } from './list/list.component';
+import { LargeTextListComponent } from './list/large-text-list/large-text-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
     ListComponent,
     MapComponent,
     ResponsiveComponent,
+    SelectionListComponent,
     TodoComponent,
+    LargeTextListComponent,
   ],
   imports: [
     AppRoutingModule,

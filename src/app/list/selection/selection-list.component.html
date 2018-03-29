@@ -1,0 +1,18 @@
+
+<mat-toolbar>
+  <h1>
+    Updating element array with ngModel.
+    Selected Elements are: {{selectedOptions}}
+  </h1>
+</mat-toolbar>
+<mat-card class="spacer">
+  <mat-selection-list [(ngModel)]="selectedOptions"
+                      (selectionChange)="onModelChange($event)">
+    <mat-list-option *ngFor="let item of items"
+                     checkboxPosition="before"
+                     [value]="item.id">
+        <p>{{item.description}}</p>
+      <mat-divider></mat-divider>
+    </mat-list-option>
+  </mat-selection-list>
+</mat-card>

@@ -1,40 +1,15 @@
-import { Component } from '@angular/core';
-import { MatSelectionListChange } from '@angular/material';
-import { ListItem } from './ListItem';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-todo',
+  selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent {
-  todos: ListItem[] = [
-    {
-      id: 100,
-      description: 'Description 100',
-    },
-    {
-      id: 200,
-      description: 'Description 200',
-    },
-    {
-      id: 300,
-      description: 'Description 300',
-    },
-    {
-      id: 400,
-      description: 'Description 400',
-    },
-    {
-      id: 500,
-      description: 'Description 500',
-    },
-  ];
-  selectedOptions: number[] = [];
+export class ListComponent implements OnInit {
 
+  constructor() { }
 
-  public onModelChange(changed: MatSelectionListChange): void {
-    console.log(changed);
+  ngOnInit() {
   }
 
 }
