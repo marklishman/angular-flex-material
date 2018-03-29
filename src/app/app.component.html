@@ -28,7 +28,7 @@
         <mat-icon mat-list-icon color="primary">playlist_add_check</mat-icon>
         <p>Todo</p>
       </a>
-      <a mat-list-item routerLink="/dashboard">
+      <a *ngIf="showDashboard" mat-list-item routerLink="/dashboard">
         <mat-icon mat-list-icon color="primary">dashboard</mat-icon>
         <p>Dashboard</p>
       </a>

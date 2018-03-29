@@ -1,6 +1,7 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, enableProdMode, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { MediaChange, ObservableMedia } from '@angular/flex-layout';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent implements OnDestroy {
 
   watcher: Subscription;
   isSmall: boolean;
+
+  showDashboard = environment.dashboard;
 
   constructor(private media: ObservableMedia) {
 
