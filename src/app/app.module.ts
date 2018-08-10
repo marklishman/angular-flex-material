@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 import { SelectionListComponent } from './list/selection/selection-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AgmCoreModule } from '@agm/core';
-import { MapComponent } from './map/map.component';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { ListComponent } from './list/list.component';
 import { LargeTextListComponent } from './list/large-text-list/large-text-list.component';
@@ -27,7 +26,6 @@ import { LargeTextListComponent } from './list/large-text-list/large-text-list.c
     CardComponent,
     DashboardComponent,
     ListComponent,
-    MapComponent,
     ResponsiveComponent,
     SelectionListComponent,
     TodoComponent,
